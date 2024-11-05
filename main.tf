@@ -7,7 +7,7 @@ resource "digitalocean_project" "main" {
 }
 
 resource "digitalocean_vpc" "main" {
-    name = "Szkolenia Cloud Example VPC"
+    name = "Szkolenia-Cloud-Example-VPC"
     region = "fra1"
     description = "This is a VPC for the Szkolenia Cloud Example"
     ip_range = "10.0.0.0/24"
