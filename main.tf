@@ -14,7 +14,7 @@ resource "digitalocean_vpc" "main" {
 }
 
 resource "digitalocean_droplet" "main" {
-    name = "Szkolenia Cloud Example Droplet"
+    name = "Szkolenia-Cloud-Example-Droplet"
     image ="ubuntu-20-04-x64"
     region = "fra1"
     size = "s-1vcpu-1gb"
@@ -22,7 +22,7 @@ resource "digitalocean_droplet" "main" {
 }
 
 resource "digitalocean_firewall" "main" {
-    name = "Szkolenia Cloud Example Firewall"
+    name = "Szkolenia-Cloud-Example-Firewall"
     droplet_ids = [ digitalocean_droplet.main.id]
     inbound_rule {
         protocol = "tcp"
