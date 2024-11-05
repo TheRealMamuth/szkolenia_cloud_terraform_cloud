@@ -3,7 +3,7 @@ resource "digitalocean_project" "main" {
   description = "This is a project for the Szkolenia Cloud Example"
   purpose = "This project is for the Szkolenia Cloud Example"
   environment = "development"
-  resources = [digitalocean_droplet.main.id]
+  resources = [digitalocean_droplet.main.urn]
 }
 
 resource "digitalocean_vpc" "main" {
