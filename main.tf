@@ -60,6 +60,10 @@ resource "aws_vpc" "main" {
   cidr_block = "10.100.0.0/24"
   enable_dns_support = true
   enable_dns_hostnames = true
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_subnet" "main" {
