@@ -13,12 +13,23 @@ resource "digitalocean_vpc" "main" {
     ip_range = "10.100.0.0/24"
 }
 
+resource "null_resource" "main" {
+    provisioner "local-exec" {
+      when = destroy
+      command = "sleep 10"
+    }
+
+    depends_on = [ digitalocean_vpc.main ]
+}
+
 resource "digitalocean_droplet" "main" {
     name = "Szkolenia-Cloud-Example-Droplet"
     image ="ubuntu-20-04-x64"
     region = "fra1"
     size = "s-1vcpu-1gb"
     vpc_uuid = digitalocean_vpc.main.id
+
+    depends_on = [ null_resource.main ]
 }
 
 resource "digitalocean_firewall" "main" {
