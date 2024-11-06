@@ -7,10 +7,10 @@ resource "digitalocean_project" "main" {
 }
 
 resource "digitalocean_vpc" "main" {
-    name = "Szkolenia-Cloud-Example-VPC"
+    name = "Szkolenia-Cloud-Example-VPC-NEW"
     region = "fra1"
     description = "This is a VPC for the Szkolenia Cloud Example"
-    ip_range = "10.0.0.0/24"
+    ip_range = "10.100.0.0/24"
 }
 
 resource "digitalocean_droplet" "main" {
@@ -53,7 +53,7 @@ resource "aws_vpc" "main" {
 
 resource "aws_subnet" "main" {
     vpc_id = aws_vpc.main.id
-    cidr_block = "10.0.0.0/24"
+    cidr_block = "10.100.0.0/24"
     availability_zone = "eu-central-1a"
 }
 
